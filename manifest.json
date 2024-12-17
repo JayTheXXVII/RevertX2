@@ -1,0 +1,9 @@
+{
+  "name": "RevertX2",
+  "description": "RevertX2 attempts to emulates the pre-LibraryX Theme *Read Description",
+  "preview": "/IMG/logo.png",
+  "usercss": "user.css",
+  "schemes": "color.ini",
+  "readme": "README.md",
+  "tags": ["1.2.45.454"]
+}
