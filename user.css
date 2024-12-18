@@ -150,7 +150,7 @@
 		}
 		.main-topBar-topbarContentWrapper{
 			-webkit-app-region: drag;
-			max-width: fit-content;
+			min-width: max-content;
 		}
 	/*Local Files*/
 		nav.app-module__tabBar___EngzO_betterDlocalDfiles {
