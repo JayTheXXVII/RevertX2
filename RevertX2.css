@@ -495,7 +495,7 @@
 	
 
 	/*Topbar Play Button*/	
-		.hV9v6y_uYwdAsoiOHpzk.contentSpacing {right: 30%; padding-left: 10px; display: block; max-width: 40.5%;}
+		.hV9v6y_uYwdAsoiOHpzk.contentSpacing {padding-left: 10px; display: inline-grid; max-width: 40.5%;}
 
 	/*Topbar Profile/Friend/Notification Button*/
 	.spotify__container--is-desktop.spotify__os--is-windows .Root__globalNav .main-topBar-topbarContentRight {right: 15vw !important;}
