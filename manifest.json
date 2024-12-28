@@ -1,9 +1,16 @@
 {
-  "name": "RevertX2",
-  "description": "RevertX2 attempts to emulates the pre-LibraryX Theme *Read Description",
-  "preview": "/IMG/logo.png",
-  "usercss": "user.css",
-  "schemes": "color.ini",
-  "readme": "README.md",
-  "tags": ["W.I.P"]
+	"name": "RevertX2",
+	"description": "RevertX2 attempts to emulates the pre-LibraryX Theme *Read Description",
+	"preview": "assets/logo.png",
+	"usercss": "src/user.css",
+	"schemes": "src/color.ini",
+	"include": "src/theme.js",
+	"readme": "README.md",
+	"authors": [
+		{
+			"name": "JayTheXXVII",
+			"url": "https://github.com/JayTheXXVII/RevertX2"
+		}
+	],
+	"tags": ["W.I.P"]
 }
