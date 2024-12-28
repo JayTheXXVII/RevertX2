@@ -1,8 +1,7 @@
 # Installation
 
 1. - Install [Spicetify](https://spicetify.app/)
-2. - Requires [LibX Reborn](https://github.com/sanoojes/spicetify-extensions) from [Marketplace](https://github.com/spicetify/marketplace)
-3. - Install from [RevertX2](https://github.com/JayTheXXVII/RevertX2) from [Marketplace](https://github.com/spicetify/marketplace) `NEW`
+2. - Install from [RevertX2](https://github.com/JayTheXXVII/RevertX2) from [Marketplace](https://github.com/spicetify/marketplace) `NEW`
 
 
 ###  Works Best With [RTL](https://github.com/JayTheXXVII/RTL) ***Update To Be Posted Soon***
