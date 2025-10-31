@@ -598,7 +598,7 @@ button[data-restore-focus-key="now_playing_view"],
 	.main-topBar-topbarContentRight {
 	/* specific to wundoss */
 	right: 0px !important; /*right: 143px !important;*/
-    margin-inline-end: 2em !important;
+    margin-inline-end: 12em !important;
 }
 
 :root {
