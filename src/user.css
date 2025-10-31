@@ -155,7 +155,9 @@
 }
 
 .Root__globalNav .main-topBar-topbarContentRight {
-	right: 0.5rem;
+	right: 0px !important; /*right: 0.5rem;*/
+    top: 18px !important;
+    margin-inline-end: 27em !important;
 }
 
 .spotify__container--is-desktop.spotify__os--is-windows
@@ -595,7 +597,8 @@ button[data-restore-focus-key="now_playing_view"],
 .Root__top-container[data-right-sidebar-hidden="true"]
 	.main-topBar-topbarContentRight {
 	/* specific to wundoss */
-	right: 143px !important;
+	right: 0px !important; /*right: 143px !important;*/
+    margin-inline-end: 2em !important;
 }
 
 :root {
