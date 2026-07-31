@@ -43,6 +43,117 @@
 	<a href="https://jaythexxvii.github.io/ServerStatus">Server Status</a>
 </nav>
 
+  <main class="RevertX2-Nav">
+    <body>
+      <font size="+10" face="Arial">
+        <h2 class="RevertX2-Header"> <a href="https://github.com/JayTheXXVII/RevertX2">RevertX2</a>
+      </font>
+      </h2>
+      <img
+        src="https://raw.githubusercontent.com/JayTheXXVII/jaythexxvii.github.io/main/Assets/RevertX2%20Preview%20Image.png"
+        alt="RevertX2" class="center" />
+		<style>
+		.center {max-width: -moz-available;}
+		</style>
+    </body>
+  </main>
+
+<!-- Nav Logic -->
+<script>
+	const slider = document.querySelector('nav');
+	let isDown = false;
+	let startX;
+	let scrollLeft;
+
+	slider.addEventListener('mousedown', (e) => {
+	  isDown = true;
+	  startX = e.pageX - slider.offsetLeft;
+	  scrollLeft = slider.scrollLeft;
+	});
+
+	slider.addEventListener('mouseleave', () => {
+	  isDown = false;
+	});
+
+	slider.addEventListener('mouseup', () => {
+	  isDown = false;
+	});
+
+	slider.addEventListener('mousemove', (e) => {
+	  if (!isDown) return; // Stop the function from running if not clicked
+	  e.preventDefault();
+	  const x = e.pageX - slider.offsetLeft;
+	  const walk = (x - startX) * 2; // Multiply by 2 to scroll faster
+	  slider.scrollLeft = scrollLeft - walk;
+	});
+</script>
+
+    <!-- Check for Cloudflare Server Outage -->
+    <div id="cloudflare-status">Cloudflare Status: Checking...</div>
+    <script>
+    async function checkCloudflareStatus() {
+      const statusEl = document.getElementById('cloudflare-status');
+      try {
+        const response = await fetch('https://www.cloudflarestatus.com/api/v2/summary.json');
+        const data = await response.json();
+        
+        const indicator = data.status.indicator;
+        const description = data.status.description;
+
+        if (indicator === 'none') {
+          statusEl.innerHTML = `Cloudflare Status: <span style="color: green;">All Systems Operational</span>`;
+        } else {
+          statusEl.innerHTML = `Cloudflare Status: <a href="https://www.cloudflarestatus.com/" style="color: orange;">${description}</a>`;
+        }
+      } catch (error) {
+        statusEl.innerHTML = `Cloudflare Status: <span style="color: red;">Failed to load</span>`;
+      }
+    }
+    checkCloudflareStatus();
+    </script>
+	
+<script>
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('ip-address').textContent = data.ip;
+        })
+        .catch(error => {
+            document.getElementById('ip-address').textContent = 'Unable to load IP';
+        });
+</script>
+    <span class="display-time" id="display-time"></span> <span class="ip-address" id="ip-address">Loading...</span>
+    <div class="XXVII-Bottom" >
+        Made By XXVII
+    </div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function updateDateTime() {
+                const now = new Date();
+                const dateTimeString = now.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+
+                // Update the element with class "display-time"
+                const elements = document.querySelectorAll('.display-time');
+                elements.forEach(function(element) {
+                    element.textContent = dateTimeString;
+                });
+            }
+
+            // Update immediately
+            updateDateTime();
+
+            // Update every second
+            setInterval(updateDateTime, 1000);
+        });
+    </script>
 <style>
 @media (prefers-color-scheme: light) {
   body {color: black !important; background-color: hsl(0, 0%, 100%) !important;}
@@ -51,17 +162,12 @@
   .drop-nav a:hover {background-color: #fffc !important;}
   nav, .link-extractor-box {background: #990000b2 !important;}
 }
-</style>
 
-
-<style>
     .link-extractor-box {font-family: sans-serif; margin-top: 20px;}
     .link-list {padding-left: 20px;}
     .link-item {margin: 5px 0;}
 	/*.link-extractor-box {background: #ff00004d !important;}*/
-</style>
 
-<style>
   .link-extractor-box {
     font-family: sans-serif;
     margin-top: 20px;
@@ -97,45 +203,7 @@
     0% { box-shadow: 0 0 6px #2ecb71, 0 0 10px rgba(46, 203, 113, 0.4); }
     100% { box-shadow: 0 0 12px #2ecb71, 0 0 20px rgba(46, 203, 113, 0.8); }
   }
-</style>
 
-
-
-
-
-<!-- Nav Logic -->
-<script>
-	const slider = document.querySelector('nav');
-	let isDown = false;
-	let startX;
-	let scrollLeft;
-
-	slider.addEventListener('mousedown', (e) => {
-	  isDown = true;
-	  startX = e.pageX - slider.offsetLeft;
-	  scrollLeft = slider.scrollLeft;
-	});
-
-	slider.addEventListener('mouseleave', () => {
-	  isDown = false;
-	});
-
-	slider.addEventListener('mouseup', () => {
-	  isDown = false;
-	});
-
-	slider.addEventListener('mousemove', (e) => {
-	  if (!isDown) return; // Stop the function from running if not clicked
-	  e.preventDefault();
-	  const x = e.pageX - slider.offsetLeft;
-	  const walk = (x - startX) * 2; // Multiply by 2 to scroll faster
-	  slider.scrollLeft = scrollLeft - walk;
-	});
-</script>
-
-
-
-<style>
         /* Base styles */
         * {
             margin: 0;
@@ -220,7 +288,8 @@
         .drop-nav {
             position: absolute;
             top: 100%;
-            left: 0;
+            right: 0;
+            left: auto;
             background-color: #292929;#2c3e50;
             min-width: 200px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -503,46 +572,26 @@
 	  text-wrap: nowrap;
 	}
 }
+.ip-box {
+        font-family: monospace, sans-serif;
+        font-size: 1.2rem;
+        padding: 15px;
+        background: #f4f4f4;
+        border-radius: 5px;
+        display: inline-block;
+    }
 
+    #ip-address {
+        font-weight: normal;
+        color: #fff;
+    }
+    .XXVII-Bottom, #display-time, #ip-address {
+        font-size: x-small;
+    }
 
     </style>
-  <main class="RevertX2-Nav">
-    <body>
-      <font size="+10" face="Arial">
-        <h2 class="RevertX2-Header"> <a href="https://github.com/JayTheXXVII/RevertX2">RevertX2</a>
-      </font>
-      </h2>
-      <img
-        src="https://raw.githubusercontent.com/JayTheXXVII/jaythexxvii.github.io/main/Assets/RevertX2%20Preview%20Image.png"
-        alt="RevertX2" class="center" />
-		<style>
-		.center {max-width: -moz-available;}
-		</style>
-    </body>
-  </main>
+
 </body>
 </html>
-    <!-- Check for Cloudflare Server Outage -->
-    <div id="cloudflare-status">Cloudflare Status: Checking...</div>
-    <script>
-    async function checkCloudflareStatus() {
-      const statusEl = document.getElementById('cloudflare-status');
-      try {
-        const response = await fetch('https://www.cloudflarestatus.com/api/v2/summary.json');
-        const data = await response.json();
-        
-        const indicator = data.status.indicator;
-        const description = data.status.description;
 
-        if (indicator === 'none') {
-          statusEl.innerHTML = `Cloudflare Status: <span style="color: green;">All Systems Operational</span>`;
-        } else {
-          statusEl.innerHTML = `Cloudflare Status: <a href="https://www.cloudflarestatus.com/" style="color: orange;">${description}</a>`;
-        }
-      } catch (error) {
-        statusEl.innerHTML = `Cloudflare Status: <span style="color: red;">Failed to load</span>`;
-      }
-    }
-    checkCloudflareStatus();
-    </script>
 	</div>
